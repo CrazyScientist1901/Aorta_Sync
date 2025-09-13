@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "253196129731",
+    "project_id": "aortasync-f3523",
+    "storage_bucket": "aortasync-f3523.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253196129731:android:d5b45dc73bae1dbe209976",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATy3zMD-Cx9eUpsOFXH8NWhbgAKzoISkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
