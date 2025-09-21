@@ -31,8 +31,17 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     public void onBindViewHolder(@NonNull ReportViewHolder holder, int position) {
         Report report = reports.get(position);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+
+        // Set the date
         holder.dateTextView.setText(formatter.format(report.getTimestamp()));
-        holder.contentTextView.setText(report.getContent());
+
+        // Set the content - show summary info instead of all ECG values
+        String summary = String.format("Heart Rate: %d BPM | Duration: %d min | Data Points: %d",
+                report.getHeartRate(),
+                report.getRecordingDuration() / 60000, // Convert ms to minutes
+                report.getEcgValues() != null ? report.getEcgValues().split("\n").length : 0);
+
+        holder.contentTextView.setText(summary);
     }
 
     @Override

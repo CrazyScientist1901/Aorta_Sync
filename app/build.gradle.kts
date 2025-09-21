@@ -44,6 +44,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     // Firebase Firestore
     implementation("com.google.firebase:firebase-firestore")
+    implementation ("com.google.firebase:firebase-storage")
 
     // Firebase Auth (if you're using it)
     implementation("com.google.firebase:firebase-auth")

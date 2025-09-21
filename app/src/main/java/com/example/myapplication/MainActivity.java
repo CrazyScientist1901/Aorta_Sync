@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);
 
-        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), getLifecycle());
+        // Use the correct constructor for your custom PagerAdapter
+        PagerAdapter adapter = new PagerAdapter(this); // Pass the activity context
         viewPager.setAdapter(adapter);
 
         new TabLayoutMediator(tabLayout, viewPager,
@@ -40,4 +41,3 @@ public class MainActivity extends AppCompatActivity {
                 }).attach();
     }
 }
-
