@@ -32,16 +32,14 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         Report report = reports.get(position);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 
-        // Set the date
-        holder.dateTextView.setText(formatter.format(report.getTimestamp()));
+        // Set all the text views
+        holder.filenameTextView.setText(String.format("ECG Report - %s", formatter.format(report.getTimestamp())));
+        holder.timestampTextView.setText(formatter.format(report.getTimestamp()));
+        holder.heartRateTextView.setText(String.format("Heart Rate: %d BPM", report.getHeartRate()));
+        holder.durationTextView.setText(String.format("Duration: %d minutes", report.getRecordingDuration() / 60000));
 
-        // Set the content - show summary info instead of all ECG values
-        String summary = String.format("Heart Rate: %d BPM | Duration: %d min | Data Points: %d",
-                report.getHeartRate(),
-                report.getRecordingDuration() / 60000, // Convert ms to minutes
-                report.getEcgValues() != null ? report.getEcgValues().split("\n").length : 0);
-
-        holder.contentTextView.setText(summary);
+        int dataPoints = report.getEcgValues() != null ? report.getEcgValues().split("\n").length : 0;
+        holder.dataPointsTextView.setText(String.format("Data Points: %d", dataPoints));
     }
 
     @Override
@@ -50,12 +48,15 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     }
 
     static class ReportViewHolder extends RecyclerView.ViewHolder {
-        TextView dateTextView, contentTextView;
+        TextView filenameTextView, timestampTextView, heartRateTextView, durationTextView, dataPointsTextView;
 
         ReportViewHolder(@NonNull View itemView) {
             super(itemView);
-            dateTextView = itemView.findViewById(R.id.reportDateTextView);
-            contentTextView = itemView.findViewById(R.id.reportContentTextView);
+            filenameTextView = itemView.findViewById(R.id.filenameTextView);
+            timestampTextView = itemView.findViewById(R.id.timestampTextView);
+            heartRateTextView = itemView.findViewById(R.id.heartRateTextView);
+            durationTextView = itemView.findViewById(R.id.durationTextView);
+            dataPointsTextView = itemView.findViewById(R.id.dataPointsTextView);
         }
     }
 }

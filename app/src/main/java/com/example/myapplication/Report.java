@@ -14,15 +14,6 @@ public class Report {
     public Report() {
     }
 
-    // 5-parameter constructor (for backward compatibility)
-    public Report(String ecgValues, Date timestamp, String filename, int heartRate, long recordingDuration) {
-        this.ecgValues = ecgValues;
-        this.timestamp = timestamp;
-        this.filename = filename;
-        this.heartRate = heartRate;
-        this.recordingDuration = recordingDuration;
-        this.userId = "unknown"; // Default value
-    }
 
     // 6-parameter constructor (with userId)
     public Report(String ecgValues, Date timestamp, String filename, int heartRate, long recordingDuration, String userId) {

@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+        <string name="app_name">My Application</string>
+        <string name="profile">Profile</string>
+        <string name="current_data">Current Data</string>
+        <string name="history">History</string>
+        <string name="analyse">Analyse</string>
+
 </resources>

@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
                         case 2:
                             tab.setText("History");
                             break;
+                        case 3:
+                            tab.setText("Analyse");
                     }
                 }).attach();
     }

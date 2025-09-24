@@ -21,6 +21,9 @@ public class PagerAdapter extends FragmentStateAdapter {
                 return new DataFragment();
             case 2:
                 return new HistoryFragment();
+            case 3:
+                return new AnalyseFragment();
+
             default:
                 return null;
         }
@@ -28,6 +31,6 @@ public class PagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 }
